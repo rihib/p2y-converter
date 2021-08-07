@@ -1,1 +1,1 @@
-# convert_pascal_voc_xml_to_yolo
+# Convert Pascal VOC XML files to YOLO format text files
