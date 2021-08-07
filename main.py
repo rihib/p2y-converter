@@ -5,7 +5,7 @@ absolutepath_of_directory_with_xmlfiles = 'Enter the absolute path of directory 
 absolutepath_of_directory_with_imgfiles = 'Enter the absolute path of directory here.'
 absolutepath_of_directory_with_yolofiles = 'Enter the absolute path of directory here.'  # Yolo files will be created under this directory.
 absolutepath_of_directory_with_classes_txt = 'Enter the absolute path of directory here.'  # You do not need to create classes.txt. classes.txt will be generated automatically.
-absolutepath_of_directory_with_error_txt = 'Enter the absolute path of directory here.'  # The file names of files that do not have a paired xml or image file will be written to a text file under this directory.
+absolutepath_of_directory_with_error_txt = 'Enter the absolute path of directory here.'  # The names of files that do not have a paired xml or image file will be written to a text file under this directory.
 
 ##############################################################################################################################################################################################################################################################################
 
@@ -27,8 +27,6 @@ class GetDataFromXMLfile:
         return self.xmlfile_datalists_list
 
     def parse_xmlfile(self):
-        assert self.xmlfile_path.endswith('.xml'), f"'{self.xmlfile_path}' is not an xml format file."
-
         lxml_parser = etree.XMLParser(encoding='utf-8')
         xmltree = ElementTree.parse(self.xmlfile_path, parser=lxml_parser).getroot()
 
