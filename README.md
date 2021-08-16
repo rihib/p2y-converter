@@ -54,10 +54,10 @@ class GetDataFromXMLfile:
     
     def add_data_to_datalist(self, img_filename):
         for xmlfile_datalist in self.xmlfile_datalists_list:
-            xmin = int(xmlfile_datalist[1].find('xmin').text)
-            ymin = int(xmlfile_datalist[1].find('ymin').text)
-            xmax = int(xmlfile_datalist[1].find('xmax').text)
-            ymax = int(xmlfile_datalist[1].find('ymax').text)
+            xmin = float(xmlfile_datalist[1].find('xmin').text)
+            ymin = float(xmlfile_datalist[1].find('ymin').text)
+            xmax = float(xmlfile_datalist[1].find('xmax').text)
+            ymax = float(xmlfile_datalist[1].find('ymax').text)
             bndbox_coordinates_list = [(xmin, ymin), (xmax, ymin), (xmax, ymax), (xmin, ymax)]
             xmlfile_datalist[1] = bndbox_coordinates_list
         self.xmlfile_datalists_list.append(img_filename)
