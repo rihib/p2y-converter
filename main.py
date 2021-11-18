@@ -106,13 +106,18 @@ class CreateClasssesfile:
                 f.write(class_name+'\n')
 
 
-xmlfiles_pathlist = glob(absolutepath_of_directory_with_xmlfiles + "/*.xml")
-classes_list = []
+def main():
+    xmlfiles_pathlist = glob(absolutepath_of_directory_with_xmlfiles + "/*.xml")
+    classes_list = []
 
-for xmlfile_path in xmlfiles_pathlist:
-    process_xmlfile = GetDataFromXMLfile(xmlfile_path)
-    xmlfile_datalists_list = process_xmlfile.get_datalists_list()
-    CreateYOLOfile(xmlfile_datalists_list, classes_list)
+    for xmlfile_path in xmlfiles_pathlist:
+        process_xmlfile = GetDataFromXMLfile(xmlfile_path)
+        xmlfile_datalists_list = process_xmlfile.get_datalists_list()
+        CreateYOLOfile(xmlfile_datalists_list, classes_list)
 
-process_classesfile = CreateClasssesfile(classes_list)
-process_classesfile.create_classestxt()
+    process_classesfile = CreateClasssesfile(classes_list)
+    process_classesfile.create_classestxt()
+    
+    
+if __name__ == '__main__':
+    main()
