@@ -1,4 +1,4 @@
-# Convert Pascal VOC XML Annotation files to YOLO format text files
+# P2Y Converter
 This script converts a Pascal voc file to a text file in YOLO format.
 For Japanese → https://qiita.com/Rihib/items/e163d90c009f4fe12782
 
